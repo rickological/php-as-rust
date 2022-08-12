@@ -36,9 +36,9 @@ impl Directory {
 impl Iterator for Directory {
     type Item = String;
     fn next(&mut self) -> Option<Self::Item> {
-        self.counter += 1;
         if self.counter < self.entries.len() {
             let item = &self.entries[self.counter];
+            self.counter += 1;
             return Some(String::from(item))
         } else {
             return None;
