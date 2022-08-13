@@ -3,13 +3,14 @@ use std::io;
 use std::path::Path;
 
 fn main() {
-    let files = dir(Path::new("/tmp/"))
+    let mut files = dir(Path::new("/tmp/"))
         .expect("failed");
     
-    for f in files {
+    for f in &mut files {
         println!("{:}", f);
     }
-    // println!("{:?}", files);
+    
+    println!("{:?}", files);
 }
 
 #[derive(Debug)]
